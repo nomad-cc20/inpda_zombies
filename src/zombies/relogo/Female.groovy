@@ -21,7 +21,7 @@ class Female extends Human {
 	def step() {
 		if (pregnant) {
 			pregnancyTime++;
-			this.color = Utility.white();
+			this.color = Utility.pink();
 			if (pregnancyTime > pregnancyPeriod) {
 				hatchChildren(1) {
 					color = Utility.white()

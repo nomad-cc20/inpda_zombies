@@ -31,10 +31,10 @@ public class SimBuilder implements ContextBuilder {
 		Parameters p = RunEnvironment.getInstance().getParameters();
 		
 		// NOTE: minPxcor and minPycor must be <= 0
-		int minPxcor = p.getValue("default_observer_minPxcor");
-		int maxPxcor = p.getValue("default_observer_maxPxcor");
-		int minPycor = p.getValue("default_observer_minPycor");
-		int maxPycor = p.getValue("default_observer_maxPycor");
+		int minPxcor = -16;
+		int maxPxcor = 16;
+		int minPycor = -16;
+		int maxPycor = 16;
 		RLWorldDimensions rLWorldDimensions = new RLWorldDimensions(minPxcor, maxPxcor, minPycor, maxPycor, new repast.simphony.space.continuous.StickyBorders());
 		
 		LinkFactory lf = new LinkFactory(UserLink);

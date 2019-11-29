@@ -15,9 +15,22 @@ class Hunter extends Human {
 
 	@Override
 	def step() {
-		def winner = minOneOf(zombies()) {
-			distance(it)
+		if (infected) {
+			die();
+			return;
 		}
+		
+		Zombie winner;
+		double distanceMin = Double.MAX_VALUE;
+		for (Zombie zombie : zombies()) {
+			if (distance(zombie) < distanceMin) {
+				winner = zombie;
+				distanceMin = distance(zombie);
+			}
+		}
+		
+		if (winner == null)
+			return;
 		
 		face(winner)
 		forward(0.2)

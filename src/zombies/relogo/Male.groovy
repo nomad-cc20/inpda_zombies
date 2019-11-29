@@ -15,14 +15,15 @@ class Male extends Human {
 	
 	@Override
 	def step() {
-		if (count(femalesHere()) > 0) {
+		if (count(femalesHere()) > 0)
 			impregnate(oneOf(femalesHere()))
-		}
 		
 		super.step();
 	}
 	
 	def impregnate (Female female) {
-		female.pregnant = true
+		if (Math.random() < 10 / count(humans())) {
+			female.pregnant = true
+		}
 	}
 }
