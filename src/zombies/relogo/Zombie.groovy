@@ -19,19 +19,6 @@ class Zombie extends UserTurtle {
 			count(humansOn(it))
 		}
 		
-//		def winner = minOneOf(humans()) {
-//			distance(it)
-//		}
-		
-//		Human winner;
-//		double distanceMin = Double.MAX_VALUE;
-//		for (Human human : humans()) {
-//			if (distance(human) < distanceMin) {
-//				winner = human;
-//				distanceMin = distance(human);
-//			}
-//		}
-		
 		face(winner)
 		forward(0.1)
 		
